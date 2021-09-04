@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'screen/cataegories_screen.dart';
 import 'screen/Meal_screen.dart';
+import './screen/Meal_detail.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,11 +31,42 @@ class MyApp extends StatelessWidget {
                 ),
               )),
       home: CataegoriesScreen(),
-      routes: {MealScreen.MealScreenRoute: (context) => MealScreen()},
+      routes: {
+        MealScreen.MealScreenRoute: (context) => MealScreen(),
+        MealDetails.MealDetailsRoute: (context) => MealDetails(),
+      },
+      // onGenerateRoute: (settings) {
+      //   print(settings.name);
+      //   switch (settings.name) {
+      //     case '/hello':
+      //       return MaterialPageRoute(builder: (context) => HelloScreen1());
+      //     case '/bye':
+      //       return MaterialPageRoute(builder: (context) => byeScreen1());
+      //     default:
+      //       return MaterialPageRoute(builder: (context) => byeScreen1());
+      //   }
+      // },
+      onUnknownRoute: (settings) {
+        print(settings.arguments);
+        return MaterialPageRoute(builder: (context) => UnfoundRoute());
+      },
     );
   }
 }
 
+class UnfoundRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('404'),
+      ),
+      body: Center(
+        child: Text('there is no route with such name '),
+      ),
+    );
+  }
+}
 // class MyHomePage extends StatefulWidget {
 //   const MyHomePage({Key? key}) : super(key: key);
 
