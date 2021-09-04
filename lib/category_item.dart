@@ -3,12 +3,19 @@ import 'Meal_screen.dart';
 
 class CatagoryItem extends StatelessWidget {
   final String title;
+  final String id;
   final Color color;
-  CatagoryItem(this.title, this.color);
-  void selectCategory(ctx) {
-    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return MealScreen();
-    }));
+  CatagoryItem(this.id, this.title, this.color);
+  // void selectCategory(ctx) {
+  //   Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+  //     return MealScreen(id, title);
+  //   }));
+  // }
+  void selectCategory(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(
+      MealScreen.MealScreenRoute,
+      arguments: {'id': id, 'title': title},
+    );
   }
 
   @override
