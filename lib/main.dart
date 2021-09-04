@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'cataegories_screen.dart';
 
@@ -12,7 +10,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Meals Store',
-      theme: ThemeData(primaryColor: Colors.blue),
+      theme: ThemeData(
+          primaryColor: Colors.pink,
+          accentColor: Colors.amber,
+          canvasColor: Color.fromRGBO(255, 254, 229, 1),
+          fontFamily: 'Raleway',
+          textTheme: ThemeData.light().textTheme.copyWith(
+                headline6: TextStyle(
+                  fontSize: 24,
+                  fontFamily: 'RobotoCondensed',
+                ),
+                bodyText1: TextStyle(
+                  color: Color.fromRGBO(20, 51, 51, 1),
+                ),
+                bodyText2: TextStyle(
+                  color: Color.fromRGBO(20, 51, 51, 1),
+                ),
+              )),
       home: CataegoriesScreen(),
     );
   }
