@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/screen/tabs_screen.dart';
+import 'package:meals_app/widgets/Drawer_main.dart';
 
-import 'screen/cataegories_screen.dart';
+// import 'screen/cataegories_screen.dart';
 import 'screen/Meal_screen.dart';
 import './screen/Meal_detail.dart';
 
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
                   color: Color.fromRGBO(20, 51, 51, 1),
                 ),
               )),
-      home: CataegoriesScreen(),
+      home: TabScreen(),
       routes: {
         MealScreen.MealScreenRoute: (context) => MealScreen(),
         MealDetails.MealDetailsRoute: (context) => MealDetails(),
@@ -58,6 +60,9 @@ class UnfoundRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: AppDrawer(),
+      ),
       appBar: AppBar(
         title: Text('404'),
       ),
