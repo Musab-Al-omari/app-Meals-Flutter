@@ -83,6 +83,12 @@ class MealDetails extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pop(_id);
+        },
+        child: Icon(Icons.delete),
+      ),
     );
   }
 }

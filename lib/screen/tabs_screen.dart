@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meals_app/screen/cataegories_screen.dart';
 import 'package:meals_app/screen/favorites.dart';
@@ -21,6 +22,7 @@ class _TabScreenState extends State<TabScreen> {
       ),
       body: _page[selectedPage],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Theme.of(context).primaryColor,
         onTap: (index) {
           setState(() {
             selectedPage = index;
@@ -29,7 +31,7 @@ class _TabScreenState extends State<TabScreen> {
         // backgroundColor: ,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.category_sharp),
+            icon: Icon(Icons.category),
             label: 'Category',
           ),
           BottomNavigationBarItem(
