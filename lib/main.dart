@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/screen/FilterScreen.dart';
 import 'package:meals_app/screen/tabs_screen.dart';
 import 'package:meals_app/widgets/Drawer_main.dart';
 
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
       routes: {
         MealScreen.MealScreenRoute: (context) => MealScreen(),
         MealDetails.MealDetailsRoute: (context) => MealDetails(),
+        FilterScreen.FilterScreenRoute: (context) => FilterScreen(),
       },
       // onGenerateRoute: (settings) {
       //   print(settings.name);
@@ -60,9 +62,6 @@ class UnfoundRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: AppDrawer(),
-      ),
       appBar: AppBar(
         title: Text('404'),
       ),

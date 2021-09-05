@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meals_app/screen/cataegories_screen.dart';
 import 'package:meals_app/screen/favorites.dart';
+import 'package:meals_app/widgets/Drawer_main.dart';
 
 class TabScreen extends StatefulWidget {
   @override
@@ -14,6 +15,7 @@ class _TabScreenState extends State<TabScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
       appBar: AppBar(
         title: const Text('Meals Store'),
       ),

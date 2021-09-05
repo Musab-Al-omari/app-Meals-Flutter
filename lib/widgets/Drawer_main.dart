@@ -1,9 +1,8 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
+import '../screen/FilterScreen.dart';
 
 class AppDrawer extends StatelessWidget {
-  Widget DrawerBars(void Function() myOnTap, IconData myIcon, String title) {
+  Widget DrawerBars(myOnTap, IconData myIcon, String title) {
     return ListTile(
       onTap: myOnTap,
       leading: Icon(
@@ -20,10 +19,9 @@ class AppDrawer extends StatelessWidget {
     );
   }
 
-  void toTheHome() {}
-  void toTheSetting() {}
   @override
   Widget build(BuildContext context) {
+    // void toTheSetting() {}
     return Drawer(
       child: Column(
         children: [
@@ -43,8 +41,13 @@ class AppDrawer extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          DrawerBars(toTheHome, Icons.restaurant_menu, 'Meals'),
-          DrawerBars(toTheSetting, Icons.settings, 'Filters'),
+          DrawerBars(() {
+            Navigator.pushReplacementNamed(context, '/');
+          }, Icons.restaurant_menu, 'Meals'),
+          DrawerBars(() {
+            Navigator.pushReplacementNamed(
+                context, FilterScreen.FilterScreenRoute);
+          }, Icons.settings, 'Filters'),
         ],
       ),
     );
