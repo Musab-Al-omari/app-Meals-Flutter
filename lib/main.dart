@@ -28,6 +28,7 @@ class _MyAppState extends State<MyApp> {
 
   List<Meal> _avalibleMeal = DUMMY_MEALS;
   void _setFilter(Map<String, bool> filterData) {
+    _avalibleMeal = DUMMY_MEALS;
     setState(() {
       _filter = filterData;
       _avalibleMeal = _avalibleMeal.where((meal) {

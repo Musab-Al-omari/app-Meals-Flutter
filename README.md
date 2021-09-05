@@ -1,16 +1,35 @@
 # meals_app
 
-A new Flutter project.
+A new Flutter project. that i make to learn the flutter  and the Dart language base on udemy course named *** Flutter & Dart - The Complete Guide 2021 Edition ***
 
-## Getting Started
+## what do i learn by building this project ?
+1. styling the Widget and make the themes
+2. alot of Widget like 
+  
+  * IconButton
+  * BottomNavigationBar
+  * Grid list
+  
+3. navigation inside flutter 
+4. routse system inside flutter  
+5. passing  data  front back 
+6. create globle theme
 
-This project is a starting point for a Flutter application.
+# Image
+![main page without items](./assets/images/Screenshot_1630874755.png)
+![drower item](./assets/images/Screenshot_1630874758.png)
+![fillter screen ](./assets/images/Screenshot_1630874762.png)
+![fillter screen ](./assets/images/Screenshot_1630874768.png)
+![catagory page screen](./assets/images/Screenshot_1630874794.png)
+![catagory page screen](./assets/images/Screenshot_1630874826.png)
+![one meal details](./assets/images/Screenshot_1630874804.png)
+![one meal details](./assets/images/Screenshot_1630874815.png)
+![one meal details](./assets/images/Screenshot_1630874818.png)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### still to go later ,
+1. favorite screen 
+2. auth 
+3. add backend server and databace 
+
