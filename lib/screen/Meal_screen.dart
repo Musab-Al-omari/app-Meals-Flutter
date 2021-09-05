@@ -5,7 +5,9 @@ import '../dummy_data.dart';
 
 class MealScreen extends StatefulWidget {
   static const MealScreenRoute = '/Meal-Screen';
+  final List<Meal> avalibleMeal;
 
+  MealScreen(this.avalibleMeal);
   @override
   _MealScreenState createState() => _MealScreenState();
 }
@@ -31,7 +33,7 @@ class _MealScreenState extends State<MealScreen> {
 
       final mealId = modaleRout['id'];
 
-      myCataMeal = DUMMY_MEALS.where((meal) {
+      myCataMeal = widget.avalibleMeal.where((meal) {
         return meal.categories.contains(mealId);
       }).toList();
     }

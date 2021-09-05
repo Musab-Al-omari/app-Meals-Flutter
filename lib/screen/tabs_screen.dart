@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meals_app/screen/cataegories_screen.dart';
-import 'package:meals_app/screen/favorites.dart';
+import 'package:meals_app/screen/Favorites.dart';
 import 'package:meals_app/widgets/Drawer_main.dart';
 
 class TabScreen extends StatefulWidget {

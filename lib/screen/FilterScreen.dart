@@ -3,6 +3,9 @@ import 'package:meals_app/widgets/Drawer_main.dart';
 
 class FilterScreen extends StatefulWidget {
   static const FilterScreenRoute = '/Filter-Route';
+  final Function setFilters;
+  final Map<String, bool> cruuntFilter;
+  FilterScreen(this.setFilters, this.cruuntFilter);
 
   @override
   _FilterScreenState createState() => _FilterScreenState();
@@ -13,6 +16,15 @@ class _FilterScreenState extends State<FilterScreen> {
   var _isVegan = false;
   var _isVegetarian = false;
   var _isLactoseFree = false;
+
+  @override
+  void initState() {
+    _isGlutenFree = widget.cruuntFilter['gluten'] as bool;
+    _isVegan = widget.cruuntFilter['vegan'] as bool;
+    _isVegetarian = widget.cruuntFilter['vegetarian'] as bool;
+    _isLactoseFree = widget.cruuntFilter['lactose'] as bool;
+    super.initState();
+  }
 
   Widget buildSwitch(
       String title, String subTitle, bool myBool, Function(bool) updateValue) {
@@ -28,6 +40,18 @@ class _FilterScreenState extends State<FilterScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('fillter'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                widget.setFilters({
+                  'gluten': _isGlutenFree,
+                  'lactose': _isLactoseFree,
+                  'vegan': _isVegan,
+                  'vegetarian': _isVegetarian,
+                });
+              },
+              icon: Icon(Icons.save))
+        ],
       ),
       drawer: AppDrawer(),
       body: Column(
